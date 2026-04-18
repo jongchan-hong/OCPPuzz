@@ -1,0 +1,7955 @@
+[
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetVariablesRequest",
+        "fix_value_list": [
+          {
+            "name": "ComponentName",
+            "value": "SecurityCtrlr"
+          },
+          {
+            "name": "VariableName",
+            "value": "BasicAuthPassword"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetVariablesResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TriggerMessageRequest",
+        "fix_value_list": [
+          {
+            "name": "requestedMessage",
+            "value": "SignChargingStationCertificate"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TriggerMessageResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SignCertificateRequest",
+        "fix_value_list": [
+          {
+            "name": "certificateType",
+            "value": "ChargingStationCertificate"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SignCertificateResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "CertificateSignedRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "CertificateSignedResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted/Rejected"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "OrganizationName",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetReportRequest",
+        "fix_value_list": [
+          {
+            "name": "componentVariable.component",
+            "value": "ISO15118Ctrlr"
+          },
+          {
+            "name": "componentVariable.variable",
+            "value": "SeccId"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TriggerMessageRequest",
+        "fix_value_list": [
+          {
+            "name": "requestedMessage",
+            "value": "SignV2GCertificate"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TriggerMessageResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SignCertificateRequest",
+        "fix_value_list": [
+          {
+            "name": "certificateType",
+            "value": "V2GCertificate"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SignCertificateResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "CertificateSignedRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "CertificateSignedResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted/Rejected"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "ISO15118Ctrlr.SeccId",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SignCertificateRequest",
+        "fix_value_list": [
+          {
+            "name": "certificateType",
+            "value": "ChargingStationCertificate"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SignCertificateResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Certificate Authority Server",
+        "message": "forward CSR",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Certificate Authority Server",
+        "callee": "CSMS",
+        "message": "return Signed Certificate",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "CertificateSignedRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "CertificateSignedResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted/Rejected"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "OrganizationName",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SecurityEventNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SecurityEventNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetVariablesRequest",
+        "fix_value_list": [
+          {
+            "name": "variableName",
+            "value": "NetworkConfigurationPriority"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetVariablesResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ResetRequest",
+        "fix_value_list": [
+          {
+            "name": "type",
+            "value": "OnIdle"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ResetResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "BootNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "NetworkConnectionProfile",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "BootNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "reason",
+            "value": "PowerUp"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Unavailable"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "HeartbeatRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "HeartbeatResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "BootNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Pending"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetVariablesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetVariablesResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetVariablesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetVariablesResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "BootNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Pending"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "BootNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Rejected"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "BootNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Rejected"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "BootNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Pending"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetVariablesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetVariablesResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetVariablesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetVariablesResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "BootNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Pending"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "BootNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Rejected"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "BootNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Rejected"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "HeartbeatRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "HeartbeatResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "HeartbeatRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "HeartbeatResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "OfflineThreshold",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "OfflineThreshold",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetVariablesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetVariablesResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetVariablesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetVariablesResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetBaseReportRequest",
+        "fix_value_list": [
+          {
+            "name": "reportBase",
+            "value": "Supported"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetBaseReportResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyReportRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyReportResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetReportRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetReportResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyReportRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyReportResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetNetworkProfileRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetNetworkProfileResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS 1",
+        "callee": "Charging Station",
+        "message": "SetVariablesRequest",
+        "fix_value_list": [
+          {
+            "name": "NetworkConfigurationPriority",
+            "value": "CSMS 2"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS 1",
+        "message": "SetVariablesResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "RebootRequired"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS 1",
+        "callee": "Charging Station",
+        "message": "ResetRequest",
+        "fix_value_list": [
+          {
+            "name": "type",
+            "value": "OnIdle"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS 1",
+        "message": "ResetResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS 2",
+        "message": "BootNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS 2",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetNetworkProfileRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetNetworkProfileResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ResetRequest",
+        "fix_value_list": [
+          {
+            "name": "type",
+            "value": "OnIdle"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ResetResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Unavailable"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "BootNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "BootNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSO",
+        "callee": "CSMS",
+        "message": "ResetRequest",
+        "fix_value_list": [
+          {
+            "name": "type",
+            "value": "OnIdle"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ResetRequest",
+        "fix_value_list": [
+          {
+            "name": "type",
+            "value": "OnIdle"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ResetResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Scheduled"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Unavailable"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": [
+          {
+            "name": "idToken.id",
+            "value": "AA12345"
+          },
+          {
+            "name": "idToken.type",
+            "value": "ISO14443"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Occupied"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "idTokenEnumType",
+            "value": "NoAuthorization"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": [
+          {
+            "name": "idTokenInfo.status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "EVConnected",
+          "Authorized",
+          "DataSigned",
+          "PowerPathClosed",
+          "EnergyTransfer"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Occupied"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "RequestStartTransactionRequest",
+        "fix_value_list": [
+          {
+            "name": "evseId",
+            "value": "1"
+          },
+          {
+            "name": "idToken.type",
+            "value": "Central"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "RequestStartTransactionResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": [
+          {
+            "name": "idTokenInfo.status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "EVConnected",
+          "Authorized",
+          "DataSigned",
+          "PowerPathClosed",
+          "EnergyTransfer"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": [
+          {
+            "name": "idTokenType",
+            "value": "KeyCode"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "idTokenInfo.status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "RequestStartTransactionRequest",
+        "fix_value_list": [
+          {
+            "name": "evseId",
+            "value": "1"
+          },
+          {
+            "name": "idToken.id",
+            "value": "4444"
+          },
+          {
+            "name": "idToken.type",
+            "value": "Central"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "RequestStartTransactionResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "transactionId",
+            "value": "AB1234"
+          },
+          {
+            "name": "evse.id",
+            "value": "1"
+          },
+          {
+            "name": "evse.connectorId",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Occupied"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": [
+          {
+            "name": "idToken.id",
+            "value": "1234"
+          },
+          {
+            "name": "idToken.type",
+            "value": "Local"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "transactionId",
+            "value": "AB1234"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          },
+          {
+            "name": "triggerReason",
+            "value": "Authorized"
+          },
+          {
+            "name": "idToken.id",
+            "value": "1234"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": [
+          {
+            "name": "idTokenInfo.status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "RequestStopTransactionRequest",
+        "fix_value_list": [
+          {
+            "name": "transactionId",
+            "value": "AB1234"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "RequestStopTransactionResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "transactionId",
+            "value": "AB1234"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          },
+          {
+            "name": "triggerReason",
+            "value": "RemoteStop"
+          },
+          {
+            "name": "idToken.id",
+            "value": "1234"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "transactionId",
+            "value": "AB1234"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "Authorized",
+          "DataSigned",
+          "PowerPathClosed",
+          "EnergyTransfer"
+        ]
+      },
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "ParkingBayOccupancy",
+          "EVConnected"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "triggerReason",
+            "value": "Authorized"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "triggerReason",
+            "value": "StopAuthorized"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "Local"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "idTokenInfo",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": [
+          {
+            "name": "idTokenInfo",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "AuthCacheEnabled",
+        "values": [
+          "true"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ClearCacheRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ClearCacheResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "AuthCacheEnabled",
+        "values": [
+          "true"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Occupied"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "AuthCacheEnabled",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "name": "LocalPreAuthorize",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "EVConnected",
+          "Authorized",
+          "DataSigned",
+          "PowerPathClosed",
+          "EnergyTransfer"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "LocalAuthListEnabled",
+        "values": [
+          "true"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "LocalAuthListEnabled",
+        "values": []
+      },
+      {
+        "name": "LocalPreAuthorize",
+        "values": [
+          "true"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "OfflineTxForUnknownIdEnabled",
+        "values": [
+          "True"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "groupId",
+            "value": "MasterPassGroupId"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "stopReason",
+            "value": "MasterPass"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "MasterPassGroupId",
+        "values": []
+      },
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "Authorized",
+          "DataSigned",
+          "PowerPathClosed",
+          "EnergyTransfer"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SendLocalListRequest",
+        "fix_value_list": [
+          {
+            "name": "updateType",
+            "value": "Full"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SendLocalListResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "LocalAuthListEnabled",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetLocalListVersionRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetLocalListVersionResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "LocalAuthListEnabled",
+        "values": [
+          "true"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "triggerReason",
+            "value": "EVDetected"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "ParkingBayOccupancy"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          },
+          {
+            "name": "triggerReason",
+            "value": "CablePluggedIn"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "EVConnected"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          },
+          {
+            "name": "triggerReason",
+            "value": "CablePluggedIn"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "EVConnected"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "triggerReason",
+            "value": "Authorized"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "Authorized"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "triggerReason",
+            "value": "Authorized"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "DataSigned"
+        ]
+      },
+      {
+        "name": "SampledDataSignReadings",
+        "values": [
+          "true"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "triggerReason",
+            "value": "SignedDataReceived"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "PowerPathClosed"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "triggerReason",
+            "value": "ChargingStateChanged"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "PowerPathClosed"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          },
+          {
+            "name": "triggerReason",
+            "value": "ChargingStateChanged"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "EnergyTransfer"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Occupied"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "triggerReason",
+            "value": "CablePluggedIn"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "triggerReason",
+            "value": "Authorized"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          },
+          {
+            "name": "triggerReason",
+            "value": "ChargingStateChanged"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "EVConnected",
+          "Authorized",
+          "DataSigned",
+          "PowerPathClosed",
+          "EnergyTransfer"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "triggerReason",
+            "value": "Authorized"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Occupied"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          },
+          {
+            "name": "triggerReason",
+            "value": "CablePluggedIn"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          },
+          {
+            "name": "triggerReason",
+            "value": "ChargingStateChanged"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "triggerReason",
+            "value": "EVConnectTimeout"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "Timeout"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "Authorized",
+          "DataSigned",
+          "PowerPathClosed",
+          "EnergyTransfer"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "offline",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "HeartbeatRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "HeartbeatResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "offline",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": [
+          {
+            "name": "idTokenInfo.status",
+            "value": "Blocked"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "triggerReason",
+            "value": "Deauthorized"
+          },
+          {
+            "name": "chargingState",
+            "value": "SuspendedEVSE"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "triggerReason",
+            "value": "EVDeparted"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "Local"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "ParkingBayOccupancy"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "EVConnected"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "triggerReason",
+            "value": "EVDeparted"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "Local"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "ParkingBayOccupancy"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "triggerReason",
+            "value": "EVCommunicationLost"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "EVDisconnected"
+          },
+          {
+            "name": "chargingState",
+            "value": "idle"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "EVConnected"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "Authorized"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "chargingState",
+            "value": "idle"
+          },
+          {
+            "name": "triggerReason",
+            "value": "EVCommunicationLost"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "EVDisconnected"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": [
+          {
+            "name": "idTokenInfo.status",
+            "value": "NotAccepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "triggerReason",
+            "value": "Deauthorized"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "DeAuthorized"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "Authorized"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "PowerPathClosed"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "Authorized",
+          "PowerPathClosed"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "triggerReason",
+            "value": "Deauthorized"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "DeAuthorized"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "Authorized"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "EnergyTransfer"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "EnergyTransfer"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "transactionId",
+            "value": "AB1234"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          },
+          {
+            "name": "triggerReason",
+            "value": "StopAuthorized"
+          },
+          {
+            "name": "idToken.id",
+            "value": "1234"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "Local"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "Authorized",
+          "PowerPathClosed"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "triggerReason",
+            "value": "StopAuthorized"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "Local"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "Authorized",
+          "PowerPathClosed"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "triggerReason",
+            "value": "StopAuthorized"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "triggerReason",
+            "value": "ChargingStateChanged"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "Local"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "Authorized",
+          "PowerPathClosed"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "offline",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "HeartbeatRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "HeartbeatResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "ParkingBayOccupancy",
+          "EVConnected",
+          "Authorized"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "EVDisconnected"
+          },
+          {
+            "name": "triggerReason",
+            "value": "EVCommunicationLost"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "StopTxOnEVSideDisconnect",
+        "values": [
+          "true"
+        ]
+      },
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "Authorized"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "triggerReason",
+            "value": "EVCommunicationLost"
+          },
+          {
+            "name": "chargingState",
+            "value": "SuspendedEV"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "triggerReason",
+            "value": "CablePluggedIn"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "triggerReason",
+            "value": "StopAuthorized"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "EVDisconnected"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "StopTxOnEVSideDisconnect",
+        "values": [
+          "false"
+        ]
+      },
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "ParkingBayOccupancy",
+          "Authorized"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "offline",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "HeartbeatRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "HeartbeatResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "offline",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "offline",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "offline",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetTransactionStatusRequest",
+        "fix_value_list": [
+          {
+            "name": "transactionId",
+            "value": "specific"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetTransactionStatusResponse",
+        "fix_value_list": [
+          {
+            "name": "ongoing",
+            "value": "true"
+          },
+          {
+            "name": "messagesInQueue",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetTransactionStatusRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetTransactionStatusResponse",
+        "fix_value_list": [
+          {
+            "name": "messagesInQueue",
+            "value": "true"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "ParkingBayOccupancy",
+          "EVConnected",
+          "Authorized",
+          "DataSigned",
+          "PowerPathClosed"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Occupied"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "triggerReason",
+            "value": "CablePluggedIn"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "RequestStartTransactionRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "RequestStartTransactionResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          },
+          {
+            "name": "triggerReason",
+            "value": "RemoteStart"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "EVConnected",
+          "Authorized",
+          "DataSigned",
+          "PowerPathClosed",
+          "EnergyTransfer"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "RequestStartTransactionRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "RequestStartTransactionResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "triggerReason",
+            "value": "RemoteStart"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Occupied"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          },
+          {
+            "name": "triggerReason",
+            "value": "CablePluggedIn"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          },
+          {
+            "name": "triggerReason",
+            "value": "ChargingStateChanged"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "Authorized"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "RequestStopTransactionRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "RequestStopTransactionResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          },
+          {
+            "name": "triggerReason",
+            "value": "RemoteStop"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "stoppedReason",
+            "value": "Remote"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "ParkingBayOccupancy",
+          "EVConnected"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "UnlockConnectorRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "UnlockConnectorResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TriggerMessageRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TriggerMessageResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TriggerMessageRequest",
+        "fix_value_list": [
+          {
+            "name": "requestedMessage",
+            "value": "TransactionEvent"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TriggerMessageResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "triggerReason",
+            "value": "Trigger"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyEventRequest",
+        "fix_value_list": [
+          {
+            "name": "trigger",
+            "value": "Delta"
+          },
+          {
+            "name": "component.name",
+            "value": "Connector"
+          },
+          {
+            "name": "variable",
+            "value": "AvailabilityState"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "HeartbeatRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "HeartbeatResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ChangeAvailabilityRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ChangeAvailabilityResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ChangeAvailabilityRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ChangeAvailabilityResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyEventRequest",
+        "fix_value_list": [
+          {
+            "name": "component",
+            "value": "ConnectorPlugRetentionLock"
+          },
+          {
+            "name": "variable",
+            "value": "Problem"
+          },
+          {
+            "name": "value",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "ConnectorPlugRetentionLock",
+        "values": []
+      },
+      {
+        "name": "MonitoringLevel",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ReserveNowRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ReserveNowResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ReserveNowRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ReserveNowResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Reserved"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ReserveNowRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ReserveNowResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Reserved"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ReserveNowRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ReserveNowResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyEventRequest",
+        "fix_value_list": [
+          {
+            "name": "component.name",
+            "value": "Connector"
+          },
+          {
+            "name": "variable",
+            "value": "AvailabilityState"
+          },
+          {
+            "name": "actualValue",
+            "value": "Reserved"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ReserveNowRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ReserveNowResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Reserved"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ReserveNowRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ReserveNowResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyEventRequest",
+        "fix_value_list": [
+          {
+            "name": "trigger",
+            "value": "Delta"
+          },
+          {
+            "name": "component.name",
+            "value": "Connector"
+          },
+          {
+            "name": "variable",
+            "value": "AvailabilityState"
+          },
+          {
+            "name": "actualValue",
+            "value": "Reserved"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "CancelReservationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "CancelReservationResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ReserveNowRequest",
+        "fix_value_list": [
+          {
+            "name": "idToken",
+            "value": "TOKEN_A"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ReserveNowResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Reserved"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ReserveNowRequest",
+        "fix_value_list": [
+          {
+            "name": "idToken",
+            "value": "TOKEN_A"
+          },
+          {
+            "name": "groupIdToken",
+            "value": "TOKEN_P"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ReserveNowResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Reserved"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": [
+          {
+            "name": "idToken",
+            "value": "TOKEN_B"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "idTokenInfo.groupIdToken",
+            "value": "TOKEN_P"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ReservationStatusUpdateRequest",
+        "fix_value_list": [
+          {
+            "name": "reservationUpdateStatus",
+            "value": "Expired"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ReservationStatusUpdateResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          },
+          {
+            "name": "PersonalMessage",
+            "value": "0.25/kWh"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "CostUpdatedRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "CostUpdatedResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TariffInformation",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "alternative",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TariffInformation",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": [
+          {
+            "name": "totalCost",
+            "value": "X.XX"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStopPoint",
+        "values": [
+          "ParkingBayOccupancy",
+          "EVConnected",
+          "Authorized"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TariffFallbackMessage",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TotalCostFallbackMessage",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TariffInformation",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "MeterValuesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "MeterValuesResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetChargingProfileRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetChargingProfileResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetChargingProfileRequest",
+        "fix_value_list": [
+          {
+            "name": "chargingProfilePurpose",
+            "value": "TxProfile"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetChargingProfileResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Available"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Local Controller",
+        "callee": "Charging Station",
+        "message": "SetChargingProfileRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "Local Controller",
+        "message": "SetChargingProfileResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "chargingState",
+            "value": "EVConnected"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "RequestStartTransactionRequest",
+        "fix_value_list": [
+          {
+            "name": "remoteStartId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "RequestStartTransactionResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Occupied"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          },
+          {
+            "name": "remoteStartId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "RequestStartTransactionRequest",
+        "fix_value_list": [
+          {
+            "name": "remoteStartId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "RequestStartTransactionResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "StatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "connectorStatus",
+            "value": "Occupied"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "StatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "chargingState",
+            "value": "Charging"
+          },
+          {
+            "name": "remoteStartId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "AuthorizeRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "AuthorizeResponse",
+        "fix_value_list": [
+          {
+            "name": "certificateStatus",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetChargingProfileRequest",
+        "fix_value_list": [
+          {
+            "name": "TxProfile",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetChargingProfileResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "TxStartPoint",
+        "values": [
+          "EVConnected",
+          "Authorized",
+          "DataSigned",
+          "PowerPathClosed",
+          "EnergyTransfer"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetChargingProfileRequest",
+        "fix_value_list": [
+          {
+            "name": "profilePurpose",
+            "value": "TxDefaultProfile"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetChargingProfileResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "OfflineTxForUnknownIdEnabled",
+        "values": [
+          "true"
+        ]
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetCompositeScheduleRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetCompositeScheduleResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetChargingProfilesRequest",
+        "fix_value_list": [
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetChargingProfilesResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ReportChargingProfilesRequest",
+        "fix_value_list": [
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ReportChargingProfilesResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ClearChargingProfileRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ClearChargingProfileResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "External Control System",
+        "callee": "Charging Station",
+        "message": "NotifyChargingLimitRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyChargingLimitRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyChargingLimitResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "triggerReason",
+            "value": "ChargingRateChanged"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "External Control System",
+        "callee": "Charging Station",
+        "message": "Set grid limit",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyChargingLimitRequest",
+        "fix_value_list": [
+          {
+            "name": "trigger",
+            "value": "ChargingRateChanged"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyChargingLimitResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ClearedChargingLimitRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ClearedChargingLimitResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "triggerReason",
+            "value": "ChargingRateChanged"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Local Controller",
+        "callee": "CSMS",
+        "message": "NotifyChargingLimitRequest",
+        "fix_value_list": [
+          {
+            "name": "chargingLimitSource",
+            "value": "ChargingLimitGridCritical"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Local Controller",
+        "message": "NotifyChargingLimitResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Local Controller",
+        "callee": "Charging Stations",
+        "message": "SetChargingProfileRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Stations",
+        "callee": "Local Controller",
+        "message": "SetChargingProfileResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Local Controller",
+        "callee": "CSMS",
+        "message": "ClearedChargingLimitRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Local Controller",
+        "message": "ClearedChargingLimitResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Local Controller",
+        "callee": "Charging Stations",
+        "message": "ClearChargingProfileRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Stations",
+        "callee": "Local Controller",
+        "message": "ClearChargingProfileResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetChargingProfileRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetChargingProfileResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          },
+          {
+            "name": "reason",
+            "value": "ReNegotiation"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "EV",
+        "callee": "Charging Station",
+        "message": "PowerDeliveryReq",
+        "fix_value_list": [
+          {
+            "name": "chargeProgress",
+            "value": "ReNegotiate"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "EV",
+        "message": "PowerDeliveryRes",
+        "fix_value_list": []
+      },
+      {
+        "caller": "EV",
+        "callee": "Charging Station",
+        "message": "ChargeParameterDiscoveryReq",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "EV",
+        "message": "ChargeParameterDiscoveryRes",
+        "fix_value_list": []
+      },
+      {
+        "caller": "EV",
+        "callee": "Charging Station",
+        "message": "PowerDeliveryReq",
+        "fix_value_list": [
+          {
+            "name": "chargeProgress",
+            "value": "Start"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "EV",
+        "message": "PowerDeliveryRes",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyEVChargingScheduleRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyEVChargingScheduleResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyEVChargingNeedsRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyEVChargingNeedsResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetChargingProfileRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetChargingProfileResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "EV",
+        "message": "ChargeParameterDiscoveryReq",
+        "fix_value_list": []
+      },
+      {
+        "caller": "EV",
+        "callee": "Charging Station",
+        "message": "PowerDeliveryReq",
+        "fix_value_list": [
+          {
+            "name": "chargeProgress",
+            "value": "Start"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "EV",
+        "message": "PowerDeliveryRes",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyEVChargingScheduleRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyEVChargingScheduleResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Updated"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "UpdateFirmwareRequest",
+        "fix_value_list": [
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "UpdateFirmwareResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Downloading"
+          },
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Downloaded"
+          },
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "SignatureVerified"
+          },
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "InstallRebooting"
+          },
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Installing"
+          },
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "InstallRebooting"
+          },
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Installed"
+          },
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "UpdateFirmwareRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "UpdateFirmwareResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Downloading"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Downloaded"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "InstallRebooting"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Installing"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "InstallRebooting"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "FirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Installed"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "FirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Local Controller",
+        "message": "PublishFirmwareRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Local Controller",
+        "callee": "CSMS",
+        "message": "PublishFirmwareResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "PublishFirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Downloading"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "PublishFirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "PublishFirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Downloaded"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "PublishFirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "PublishFirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "ChecksumVerified"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "PublishFirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "PublishFirmwareStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Published"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "PublishFirmwareStatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Local Controller",
+        "message": "UnpublishFirmwareRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Local Controller",
+        "callee": "CSMS",
+        "message": "UnpublishFirmwareResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetInstalledCertificateIdsRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetInstalledCertificateIdsResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "DeleteCertificateRequest",
+        "fix_value_list": [
+          {
+            "name": "certificateHashData",
+            "value": "hashData"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "DeleteCertificateResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "InstallCertificateRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "InstallCertificateResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetCertificateStatusRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetCertificateStatusResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetLogRequest",
+        "fix_value_list": [
+          {
+            "name": "logType",
+            "value": "Diagnostics"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetLogResponse",
+        "fix_value_list": [
+          {
+            "name": "fileName",
+            "value": "logfile.txt"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "LogStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Uploading"
+          },
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "LogStatusNotificationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "LogStatusNotificationRequest",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Uploaded"
+          },
+          {
+            "name": "requestId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "LogStatusNotificationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetMonitoringReportRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetMonitoringReportResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyMonitoringReportRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyMonitoringReportResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetMonitoringBaseRequest",
+        "fix_value_list": [
+          {
+            "name": "monitoringBase",
+            "value": "All"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetMonitoringBaseResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetVariableMonitoringRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetVariableMonitoringResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetMonitoringLevelRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetMonitoringLevelResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyEventRequest",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": [
+      {
+        "name": "Monitoring",
+        "values": []
+      }
+    ]
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ClearVariableMonitoringRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ClearVariableMonitoringResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventData.cleared",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyEventRequest",
+        "fix_value_list": [
+          {
+            "name": "trigger",
+            "value": "Periodic"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "CustomerInformationRequest",
+        "fix_value_list": [
+          {
+            "name": "report",
+            "value": "true"
+          },
+          {
+            "name": "clear",
+            "value": "false"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "CustomerInformationResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyCustomerInformationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyCustomerInformationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "CustomerInformationRequest",
+        "fix_value_list": [
+          {
+            "name": "clear",
+            "value": "true"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "CustomerInformationResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyCustomerInformationRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyCustomerInformationResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetDisplayMessageRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetDisplayMessageResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Started"
+          },
+          {
+            "name": "transactionId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetDisplayMessageRequest",
+        "fix_value_list": [
+          {
+            "name": "transactionId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetDisplayMessageResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "TransactionEventRequest",
+        "fix_value_list": [
+          {
+            "name": "eventType",
+            "value": "Ended"
+          },
+          {
+            "name": "transactionId",
+            "value": "123"
+          }
+        ]
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "TransactionEventResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetDisplayMessagesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetDisplayMessagesResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyDisplayMessagesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyDisplayMessagesResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSO",
+        "callee": "CSMS",
+        "message": "GetDisplayMessagesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "GetDisplayMessagesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "GetDisplayMessagesResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "NotifyDisplayMessagesRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "NotifyDisplayMessagesResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "ClearDisplayMessageRequest",
+        "fix_value_list": [
+          {
+            "name": "id",
+            "value": "12"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "ClearDisplayMessageResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "SetDisplayMessageRequest",
+        "fix_value_list": [
+          {
+            "name": "id",
+            "value": "15"
+          }
+        ]
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "SetDisplayMessageResponse",
+        "fix_value_list": [
+          {
+            "name": "status",
+            "value": "Accepted"
+          }
+        ]
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "DataTransferRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "DataTransferResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  },
+  {
+    "description_type": "main",
+    "reference_value": null,
+    "scenario_list": [
+      {
+        "caller": "Charging Station",
+        "callee": "CSMS",
+        "message": "DataTransferRequest",
+        "fix_value_list": []
+      },
+      {
+        "caller": "CSMS",
+        "callee": "Charging Station",
+        "message": "DataTransferResponse",
+        "fix_value_list": []
+      }
+    ],
+    "pre_configuration_variable_list": []
+  }
+]

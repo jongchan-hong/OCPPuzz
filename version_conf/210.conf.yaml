@@ -1,0 +1,20 @@
+group:
+  - messages:
+    start_signature: "Chapter 1. Messages"
+    end_signature: "Chapter 2. Datatypes"
+    parse_type: 1
+  - datatypes:
+    start_signature: "Chapter 2. Datatypes"
+    end_signature: "Chapter 3. Enumerations"
+    parse_type: 2
+  - enumerations:
+    start_signature: "Chapter 3. Enumerations"
+    end_signature: "Referenced Components and Variables"
+    parse_type: 3
+coordinate:
+  class_x: 36.0
+  field_x: 38.0
+size:
+  level_2_height: 16
+  level_3_height: 14
+  level_4_height: 12

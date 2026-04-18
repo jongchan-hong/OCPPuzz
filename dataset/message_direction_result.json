@@ -1,0 +1,1127 @@
+[
+  {
+    "message_name": "AuthorizeRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "AuthorizeResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "BootNotificationRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "BootNotificationResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "CancelReservationRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "CancelReservationResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "CertificateSignedRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "CertificateSignedResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "ChangeAvailabilityRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "ChangeAvailabilityResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "ClearCacheRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "ClearCacheResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "ClearChargingProfileRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "ClearChargingProfileResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "ClearDisplayMessageRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "ClearDisplayMessageResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "ClearedChargingLimitRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "ClearedChargingLimitResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "ClearVariableMonitoringRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "ClearVariableMonitoringResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "CostUpdatedRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "CostUpdatedResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "DataTransferRequest",
+    "caller": [
+      "CSMS",
+      "Charging Station"
+    ],
+    "callee": [
+      "Charging Station",
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "DataTransferResponse",
+    "caller": [
+      "Charging Station",
+      "CSMS"
+    ],
+    "callee": [
+      "CSMS",
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "DeleteCertificateRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "DeleteCertificateResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "FirmwareStatusNotificationRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "FirmwareStatusNotificationResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "Get15118EVCertificateRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "Get15118EVCertificateResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetBaseReportRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetBaseReportResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "GetCertificateStatusRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "GetCertificateStatusResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetChargingProfilesRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetChargingProfilesResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "GetCompositeScheduleRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetCompositeScheduleResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "GetInstalledCertificateIdsRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetLocalListVersionRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetLocalListVersionResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "GetLogRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetLogResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "GetMonitoringReportRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetMonitoringReportResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "GetReportRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetReportResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "GetTransactionStatusRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetTransactionStatusResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "GetVariablesRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "GetVariablesResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "HeartbeatRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "HeartbeatResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "InstallCertificateRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "InstallCertificateResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "LogStatusNotificationRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "LogStatusNotificationResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "MeterValuesRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "MeterValuesResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "NotifyChargingLimitRequest",
+    "caller": [
+      "External System",
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "NotifyChargingLimitResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "NotifyDisplayMessagesRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "NotifyDisplayMessagesResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "NotifyEVChargingNeedsRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "NotifyEVChargingNeedsResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "NotifyEVChargingScheduleRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "NotifyEVChargingScheduleResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "NotifyEventRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "NotifyEventResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "NotifyMonitoringReportRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "NotifyReportRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "NotifyReportResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "PublishFirmwareRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Local Controller"
+    ]
+  },
+  {
+    "message_name": "PublishFirmwareResponse",
+    "caller": [
+      "Local Controller"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "PublishFirmwareStatusNotificationRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "PublishFirmwareStatusNotificationResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "ReportChargingProfilesRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "ReportChargingProfilesResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "RequestStartTransactionRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "RequestStartTransactionResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "RequestStopTransactionRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "RequestStopTransactionResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "ReservationStatusUpdateRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "ReservationStatusUpdateResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "ReserveNowRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "ReserveNowResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "ResetRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "ResetResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "SecurityEventNotificationRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "SecurityEventNotificationResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "SendLocalListRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "SendLocalListResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "SetChargingProfileRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "SetChargingProfileResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "SetDisplayMessageRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "SetDisplayMessageResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "SetMonitoringBaseRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "SetMonitoringBaseResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "SetMonitoringLevelRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "SetMonitoringLevelResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "SetNetworkProfileRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "SetNetworkProfileResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "SetVariableMonitoringRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "SetVariableMonitoringResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "SetVariablesRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "SetVariablesResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "SignCertificateRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "SignCertificateResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "StatusNotificationRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "StatusNotificationResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "TransactionEventRequest",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "TransactionEventResponse",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "TriggerMessageRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "TriggerMessageResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "UnlockConnectorRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "UnlockConnectorResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "UnpublishFirmwareRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "UnpublishFirmwareResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "UpdateFirmwareRequest",
+    "caller": [
+      "CSMS"
+    ],
+    "callee": [
+      "Charging Station"
+    ]
+  },
+  {
+    "message_name": "UpdateFirmwareResponse",
+    "caller": [
+      "Charging Station"
+    ],
+    "callee": [
+      "CSMS"
+    ]
+  },
+  {
+    "message_name": "CustomerInformationRequest",
+    "caller": "",
+    "callee": ""
+  },
+  {
+    "message_name": "CustomerInformationResponse",
+    "caller": "",
+    "callee": ""
+  },
+  {
+    "message_name": "GetDisplayMessagesRequest",
+    "caller": "",
+    "callee": ""
+  },
+  {
+    "message_name": "GetDisplayMessagesResponse",
+    "caller": "",
+    "callee": ""
+  },
+  {
+    "message_name": "GetInstalledCertificateIdsResponse",
+    "caller": "",
+    "callee": ""
+  },
+  {
+    "message_name": "NotifyCustomerInformationRequest",
+    "caller": "Charging Station",
+    "callee": "CSMS"
+  },
+  {
+    "message_name": "NotifyCustomerInformationResponse",
+    "caller": "",
+    "callee": ""
+  },
+  {
+    "message_name": "NotifyMonitoringReportResponse",
+    "caller": "",
+    "callee": ""
+  }
+]

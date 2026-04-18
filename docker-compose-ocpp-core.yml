@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  ocpp-core:
+    build:
+      context: ./OCPP.Core
+      dockerfile: Dockerfile
+    container_name: ocpp-core
+    ports:
+      - "9281:8081"
+      - "9282:8082"
+      - "9292:8092"
+      - "9291:8091"
+    depends_on:
+      - sqlserver
+  ocpp-core-management:
+    build:
+      context: ./OCPP.Core
+      dockerfile: Management.Dockerfile
+    container_name: ocpp-core-management
+    ports:
+      - "9299:8082"
+    depends_on:
+      - sqlserver
+  sqlserver:
+    build:
+      context: ./OCPP.Core
+      dockerfile: MSSQL.Dockerfile
+    container_name: sqlserver
+    ports:
+      - "1433:1433"
+    restart: unless-stopped

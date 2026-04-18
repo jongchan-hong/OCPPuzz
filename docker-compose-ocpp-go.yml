@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  ocpp-go:
+    build:
+      context: ./ocpp-go
+      dockerfile: example/2.0.1/csms/Dockerfile
+    image: ocpp-go
+    container_name: ocpp-go
+    environment:
+      - SERVER_LISTEN_PORT=8887
+    ports:
+      - "8887:8887"

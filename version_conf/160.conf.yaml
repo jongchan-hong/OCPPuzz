@@ -1,0 +1,15 @@
+group:
+  - messages:
+    start_signature: "6. Messages"
+    end_signature: "7. Types"
+    parse_type: 1
+  - datatypes:
+    start_signature: "7. Types"
+    end_signature: "8. Firmware and Diagnostics File Transfer"
+    parse_type: 2
+coordinate:
+  class_x: 36.0
+  field_x0: 48.0
+size:
+  level_1_height: 18
+  level_2_height: 12

@@ -1,0 +1,62 @@
+group:
+  - messages:
+    start_signature: "1. Messages"
+    end_signature: "2. Datatypes"
+    parse_type: 1
+  - datatypes:
+    start_signature: "2. Datatypes"
+    end_signature: "3. Enumerations"
+    parse_type: 2
+  - enumerations:
+    start_signature: "3. Enumerations"
+    end_signature: "Referenced Components and Variables"
+    parse_type: 3
+  - primitive_datatypes:
+    start_signature: "2.1.4. Primitive Datatypes"
+    end_signature: "2.1.5. Normal communication"
+    parse_type: 5
+  - variables:
+    start_signature: "2. Referenced Components and Variables"
+    parse_type: 6
+  - table_of_contents:
+    start_signature: "Table of Contents"
+    end_signature: "Disclaimer"
+    parse_type: 7
+appendices_group:
+  - security_events:
+    start_signature: "Appendix 1. Security Events"
+    end_signature: "Appendix 2. Standardized Units of Measure"
+    parse_type: 2
+  - standardized_units_of_measure:
+    start_signature: "Appendix 2. Standardized Units of Measure"
+    end_signature: "3.1. Controller Components"
+    parse_type: 3
+  - summary_list_of_standardized_components:
+    start_signature: "3.3. Summary List of Standardized Components"
+    end_signature: "Appendix 4. Standardized Variables"
+    parse_type: 4
+  - standardized_variables:
+    start_signature: "Appendix 4. Standardized Variables"
+    end_signature: "Appendix 5. Reason Codes"
+    parse_type: 5
+  - table_of_contents:
+    start_signature: "Table of Contents"
+    end_signature: "Disclaimer"
+    parse_type: 6
+
+coordinate:
+  class_x: 36.0
+  field_x: 38.0
+size:
+  level_2_height: 16
+  level_3_height: 14
+  level_4_height: 12
+table_of_contents:
+  left_tab:
+    level_1_x0: 36.0
+    level_2_x0: 51.0
+    level_3_x0: 66.0
+  page_number_x0: 544.133
+figure:
+  x: 36.0
+

@@ -224,13 +224,30 @@ class ProjectEventController(ABC):
 
     def get_container_name_by_port(self, port: int) -> str | None:
         try:
-            cmd = f'docker ps --format "{{{{.Names}}}} {{{{.Ports}}}}"'
+            container_ids = subprocess.check_output(
+                ["docker", "ps", "-q"],
+                text=True
+            ).strip().splitlines()
 
-            output = subprocess.check_output(cmd, shell=True, text=True)
+            for container_id in container_ids:
+                inspect_output = subprocess.check_output(
+                    ["docker", "inspect", container_id],
+                    text=True
+                )
 
-            for line in output.strip().splitlines():
-                if f":{port}->" in line:
-                    return line.split()[0]
+                container_info = json.loads(inspect_output)[0]
+
+                ports = container_info["NetworkSettings"]["Ports"]
+
+                for container_port, mappings in ports.items():
+                    if mappings is None:
+                        continue
+
+                    for mapping in mappings:
+                        host_port = mapping.get("HostPort")
+
+                        if host_port == str(port):
+                            return container_info["Name"].lstrip("/")
 
             return None
 

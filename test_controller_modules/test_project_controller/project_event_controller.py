@@ -224,16 +224,16 @@ class ProjectEventController(ABC):
 
     def get_container_name_by_port(self, port: int) -> str | None:
         try:
-            if platform.system() == "Windows":
-                cmd = f'docker ps --format "{{{{.Names}}}} {{{{.Ports}}}}" | findstr {port}'
-            else:
-                cmd = f"docker ps --format '{{{{.Names}}}} {{{{.Ports}}}}' | grep {port}"
+            cmd = f'docker ps --format "{{{{.Names}}}} {{{{.Ports}}}}"'
 
             output = subprocess.check_output(cmd, shell=True, text=True)
-            for container_name in output.strip().split():
-                if self.project_name.lower() in container_name.lower():
-                    return container_name
-            return output.strip().split()[0]
+
+            for line in output.strip().splitlines():
+                if f":{port}->" in line:
+                    return line.split()[0]
+
+            return None
+
         except subprocess.CalledProcessError:
             return None
 

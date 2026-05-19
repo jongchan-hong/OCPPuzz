@@ -34,7 +34,7 @@ class CitrineEventController(ProjectEventController):
     api_uri = f"http://localhost:{api_port}/ocpp/2.0.1/"
     dump_coverage_uri = f"http://localhost:{dump_coverage_port}/v8dump"
     support_csms_to_cs_trigger = True
-    execution_coverage_collect = True
+    execution_coverage_collect = False
 
     end_point_group = {
         "Transaction": [

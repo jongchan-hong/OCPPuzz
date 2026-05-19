@@ -1,6 +1,13 @@
 # OCPPuzz
 OCPPuzz is an Open Source OCPP Testing Framework for CSMS using GPT.
 ![OCPPuzz Overview](overview.png)
+
+## Paper Reference
+
+Accepted at FSE 2026.
+
+The camera-ready version of the paper will be available through the ACM Digital Library after publication.
+
 ## Table of Contents
 - [Prerequisites](#prerequisites)
 - [Structure](#structure)

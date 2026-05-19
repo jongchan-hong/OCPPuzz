@@ -1,0 +1,73 @@
+{
+  "name": "@citrineos/workspace",
+  "version": "1.6.3",
+  "private": false,
+  "scripts": {
+    "install-all": "npm i --verbose",
+    "copy-assets": "npm run copy-assets --prefix ./Server",
+    "build": "tsc --build --verbose",
+    "build:base:esm": "npm run build:esm --prefix ./00_Base",
+    "postbuild": "npm run copy-assets && npm run build:base:esm",
+    "clear-cache": "npm cache clean --force",
+    "remove-dependencies": "rm -rf package-lock.json **/package-lock.json **/**/package-lock.json node_modules **/node_modules **/**/node_modules",
+    "fresh": "npm run clean && npm run remove-dependencies && npm run clear-cache",
+    "clean-tsbuildinfo": "find . -name tsconfig.tsbuildinfo -not -path '*/node_modules/*' -exec rm -f {} +",
+    "clean-dist": "find . -type d -name dist -not -path '*/node_modules/*' -exec rm -rf {} +",
+    "clean": "npm run clean-dist && npm run clean-tsbuildinfo",
+    "start": "cd ./Server && npm run start",
+    "start-docker": "cd ./Server && npm run start-docker",
+    "start-docker-cloud": "cd ./Server && npm run start-docker-cloud",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "prettier": "prettier --write .",
+    "fi": "npm run fresh && npm run install-all",
+    "sync-db": "ts-node ./db.sync.ts",
+    "start-everest": "npm run start-everest --prefix ./Server",
+    "test": "jest --config jest.config.ts",
+    "coverage": "jest --config jest.config.ts --coverage",
+    "prepare": "husky",
+    "go-c8": "rm -rf coverage && NODE_OPTIONS='--max-old-space-size=8192' npx c8 --all --exclude-after-remap --reporter=json --reporter=json-summary --experimental-monocart -- ts-node /usr/local/apps/citrineos/Server/src/index.ts",
+    "go-and-c8": "NODE_OPTIONS='--max-old-space-size=8192' npx c8 --all --exclude-after-remap --reporter=json --reporter=json-summary --experimental-monocart -- ts-node /usr/local/apps/citrineos/Server/src/index.ts",
+    "report-c8": "mkdir -p /usr/local/apps/citrineos/coverage/report/.cache && NODE_OPTIONS='--max-old-space-size=51200' npx c8 report --clean --exclude-after-remap --temp-directory=/usr/local/apps/citrineos/coverage/tmp --report-dir=/usr/local/apps/citrineos/coverage --experimental-monocart='cache=false,sourceScan=false' --reporter=json --reporter=json-summary"
+
+  },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx,json,md}": "prettier --write"
+  },
+  "workspaces": [
+    "00_Base",
+    "01_Data",
+    "02_Util",
+    "03_Modules/Certificates",
+    "03_Modules/Configuration",
+    "03_Modules/EVDriver",
+    "03_Modules/Monitoring",
+    "03_Modules/OcppRouter",
+    "03_Modules/Reporting",
+    "03_Modules/SmartCharging",
+    "03_Modules/Tenant",
+    "03_Modules/Transactions",
+    "Server"
+  ],
+  "engines": {
+    "node": ">=22.11.0"
+  },
+  "c8": {
+    "exclude": [
+      "**/1.6/**",
+      "**/model/**",
+      "**/json-schema-processor-1.6.js",
+      "**.js"
+    ]
+  },
+  "devDependencies": {
+    "c8": "^9.1.0",
+    "monocart-coverage-reports": "^2.12.6",
+    "typescript": "^5.8.2",
+    "v8-coverage-merge": "^1.1.2"
+  },
+  "dependencies": {
+    "@vitest/coverage-v8": "^3.2.3"
+  }
+}
+

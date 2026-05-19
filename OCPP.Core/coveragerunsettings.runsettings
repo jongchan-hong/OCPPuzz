@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="Code Coverage">
+        <Configuration>
+          <Exclude>
+            <Module>OCPP.Core.Server.ControllerOCPP16</Module>
+            <Module>OCPP.Core.Server.Messages_OCPP16</Module>
+            <Module>OCPP.Core.Server.ExtensionLoadContext</Module>
+            <Module>OCPP.Core.Database.Migrations</Module>
+            <Attribute>System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute</Attribute>
+          </Exclude>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>

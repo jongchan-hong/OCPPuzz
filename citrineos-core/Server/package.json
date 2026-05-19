@@ -1,0 +1,57 @@
+{
+  "name": "@citrineos/server",
+  "version": "1.6.3",
+  "description": "The OCPP server implementation which acts right on top of an asynchronous WebSocket.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist/* tsconfig.tsbuildinfo",
+    "fresh": "rm -rf node_modules package-lock.json && npm run clean",
+    "compile": "npm run clean && tsc -p tsconfig.json",
+    "copy-assets": "ts-node ./copy-assets.ts ./src/assets ./dist/assets",
+    "start": "cross-env APP_NAME=all APP_ENV=local nodemon",
+    "start:instance1": "cross-env APP_NAME=all APP_ENV=local nodemon dist/index.js --env-prefix=instance1_",
+    "start:instance2": "cross-env APP_NAME=all APP_ENV=local nodemon dist/index.js --env-prefix=instance2_",
+    "start-docker": "nodemon",
+    "start-docker-cloud": "node --inspect=0.0.0.0:9229 dist/index.js",
+    "start-everest": "cd ./everest && cross-env EVEREST_IMAGE_TAG=0.0.23 EVEREST_TARGET_URL=ws://host.docker.internal:8081/cp001 docker compose up"
+  },
+  "keywords": [
+    "ocpp",
+    "ocpp_v201"
+  ],
+  "author": "S44",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/amqplib": "0.10.1",
+    "@types/ws": "8.5.4",
+    "nodemon": "3.1.7",
+    "ts-node": "10.9.1"
+  },
+  "dependencies": {
+    "@citrineos/base": "1.6.3",
+    "@citrineos/certificates": "1.6.3",
+    "@citrineos/configuration": "1.6.3",
+    "@citrineos/data": "1.6.3",
+    "@citrineos/evdriver": "1.6.3",
+    "@citrineos/monitoring": "1.6.3",
+    "@citrineos/reporting": "1.6.3",
+    "@citrineos/smartcharging": "1.6.3",
+    "@citrineos/tenant": "1.6.3",
+    "@citrineos/transactions": "1.6.3",
+    "@citrineos/util": "1.6.3",
+    "@directus/extensions": "1.0.10",
+    "@fastify/cors": "10.0.1",
+    "cross-env": "7.0.3",
+    "sqlite3": "5.1.6",
+    "ws": "8.17.1"
+  },
+  "optionalDependencies": {
+    "bufferutil": "4.0.8",
+    "utf-8-validate": "6.0.3"
+  }
+}
